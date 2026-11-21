@@ -1,0 +1,525 @@
+
+/* ==========================================
+   AGROVISION AI - GLOBAL DESIGN SYSTEM
+   ========================================== */
+
+:root {
+    --av-primary: #173D2B;
+    --av-green: #356B45;
+    --av-sage: #8BAA91;
+    --av-lime: #B8D96C;
+    --av-background: #F7F8F4;
+    --av-surface: #FFFFFF;
+    --av-border: #E5EAE2;
+    --av-text: #203329;
+    --av-muted: #718074;
+    --av-radius: 14px;
+}
+
+/* Application */
+
+.stApp {
+    background: var(--av-background);
+    color: var(--av-text);
+}
+
+[data-testid="stHeader"] {
+    background: transparent;
+}
+
+.block-container {
+    max-width: 1480px;
+    padding: 2rem 2.5rem 3rem;
+}
+
+/* Typography */
+
+html, body, [class*="css"] {
+    font-family: "Inter", sans-serif;
+}
+
+h1, h2, h3 {
+    color: var(--av-primary);
+    letter-spacing: -0.5px;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.15rem;
+}
+
+p {
+    color: var(--av-text);
+    line-height: 1.65;
+}
+
+/* Sidebar */
+
+[data-testid="stSidebar"] {
+    background: var(--av-primary);
+    border-right: 1px solid #244C36;
+}
+
+[data-testid="stSidebar"] * {
+    color: #F4F8F3;
+}
+
+[data-testid="stSidebarNav"] {
+    padding-top: 1rem;
+}
+
+[data-testid="stSidebarNav"] a {
+    border-radius: 9px;
+    margin-bottom: 5px;
+    transition: background 0.2s ease;
+}
+
+[data-testid="stSidebarNav"] a:hover {
+    background: #28563C;
+}
+
+[data-testid="stSidebarNav"] a[aria-current="page"] {
+    background: #356B45;
+    font-weight: 700;
+}
+
+/* Cards and metrics */
+
+[data-testid="stMetric"] {
+    background: var(--av-surface);
+    border: 1px solid var(--av-border);
+    border-radius: var(--av-radius);
+    padding: 20px;
+    box-shadow: 0 3px 12px rgba(23, 61, 43, 0.035);
+}
+
+[data-testid="stMetricLabel"] {
+    color: var(--av-muted);
+    font-size: 0.9rem;
+}
+
+[data-testid="stMetricValue"] {
+    color: var(--av-primary);
+    font-weight: 700;
+}
+
+/* ==========================================
+   GLOBAL BUTTON SYSTEM
+   ========================================== */
+
+/* Primary buttons - all pages */
+.stButton > button,
+.stFormSubmitButton > button,
+[data-testid="stFormSubmitButton"] button {
+
+    background-color: #356B45 !important;
+    color: #FFFFFF !important;
+
+    border: 1px solid #356B45 !important;
+    border-radius: 9px;
+
+    min-height: 44px;
+    padding: 0.55rem 1.2rem;
+
+    font-weight: 600;
+    font-size: 0.95rem;
+
+    transition: all 0.2s ease;
+}
+
+/* Force all button text and icons to white */
+.stButton > button *,
+.stFormSubmitButton > button *,
+[data-testid="stFormSubmitButton"] button * {
+
+    color: #FFFFFF !important;
+}
+
+/* Hover state */
+.stButton > button:hover,
+.stFormSubmitButton > button:hover,
+[data-testid="stFormSubmitButton"] button:hover {
+
+    background-color: #173D2B !important;
+    border-color: #173D2B !important;
+
+    color: #FFFFFF !important;
+}
+
+/* Hover text */
+.stButton > button:hover *,
+.stFormSubmitButton > button:hover *,
+[data-testid="stFormSubmitButton"] button:hover * {
+
+    color: #FFFFFF !important;
+}
+
+/* Keyboard focus */
+.stButton > button:focus-visible,
+.stFormSubmitButton > button:focus-visible {
+
+    outline: 3px solid #B8D96C !important;
+    outline-offset: 3px;
+}
+
+/* Disabled buttons */
+.stButton > button:disabled,
+.stFormSubmitButton > button:disabled {
+
+    background-color: #A6B9A9 !important;
+    border-color: #A6B9A9 !important;
+    color: #FFFFFF !important;
+    opacity: 0.75;
+}
+
+
+/* Inputs */
+
+.stTextInput input,
+.stNumberInput input,
+.stSelectbox [data-baseweb="select"],
+.stDateInput input {
+    background: white;
+    border-radius: 9px;
+}
+
+/* Containers */
+
+[data-testid="stVerticalBlockBorderWrapper"] {
+    border-color: var(--av-border);
+    border-radius: var(--av-radius);
+}
+
+/* Alerts */
+
+[data-testid="stAlert"] {
+    border-radius: 11px;
+    border-width: 1px;
+}
+
+/* Tables */
+
+[data-testid="stDataFrame"] {
+    border: 1px solid var(--av-border);
+    border-radius: 11px;
+    overflow: hidden;
+}
+
+/* Tabs */
+
+.stTabs [data-baseweb="tab-list"] {
+    gap: 15px;
+    border-bottom: 1px solid var(--av-border);
+}
+
+.stTabs [data-baseweb="tab"] {
+    color: var(--av-muted);
+    font-weight: 600;
+}
+
+.stTabs [aria-selected="true"] {
+    color: var(--av-green) !important;
+}
+
+/* Expanders */
+
+[data-testid="stExpander"] {
+    border: 1px solid var(--av-border);
+    border-radius: 11px;
+    background: white;
+}
+
+/* Dividers */
+
+hr {
+    border-color: var(--av-border);
+}
+
+/* Footer */
+
+footer {
+    visibility: hidden;
+}
+
+
+/* ==========================================
+   AGROVISION SHARED PAGE COMPONENTS
+   ========================================== */
+
+/* Page header */
+
+.av-page-header {
+    padding: 10px 0 25px 0;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--av-border);
+}
+
+.av-page-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--av-green);
+    font-size: 0.76rem;
+    font-weight: 750;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.av-page-title {
+    color: var(--av-primary);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 750;
+    letter-spacing: -1.2px;
+    line-height: 1.2;
+    margin: 0 0 12px 0;
+}
+
+.av-page-subtitle {
+    color: var(--av-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+    max-width: 850px;
+}
+
+/* Section headings */
+
+.av-section-header {
+    margin-top: 30px;
+    margin-bottom: 18px;
+}
+
+.av-section-header h2 {
+    color: var(--av-primary);
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.av-section-subtitle {
+    color: var(--av-muted);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Consistent spacing */
+
+.av-page-header + [data-testid="stVerticalBlock"] {
+    gap: 1rem;
+}
+
+/* Responsive typography */
+
+@media (max-width: 768px) {
+
+    .block-container {
+        padding: 1.2rem 1rem 2rem;
+    }
+
+    .av-page-title {
+        font-size: 1.8rem;
+    }
+
+    .av-page-subtitle {
+        font-size: 0.9rem;
+    }
+
+}
+
+
+/* ==========================================
+   AGROVISION SIDEBAR BRANDING
+========================================== */
+
+.av-sidebar-brand {
+    padding: 12px 4px 20px;
+}
+
+.av-sidebar-logo {
+    font-size: 38px;
+    margin-bottom: 8px;
+}
+
+.av-sidebar-name {
+    font-size: 27px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: -0.8px;
+}
+
+.av-sidebar-tagline {
+    color: #a9c2b2;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    margin-top: 5px;
+}
+
+.av-sidebar-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #e0ebe3;
+    font-size: 13px;
+    padding: 8px 2px;
+}
+
+.av-sidebar-status {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #c6e8ce;
+    font-size: 13px;
+    padding: 8px 2px;
+}
+
+.av-status-dot {
+    height: 8px;
+    width: 8px;
+    background: #69d391;
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 0 8px #69d391;
+}
+
+
+/* ==========================================
+   CUSTOM SIDEBAR NAVIGATION REFINEMENT
+========================================== */
+
+[data-testid="stSidebar"] {
+    background-color: #173D2D;
+}
+
+[data-testid="stSidebar"] > div {
+    background-color: #173D2D;
+}
+
+[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p {
+    color: #DCE9E0;
+}
+
+[data-testid="stSidebar"] [data-testid="stPageLink"] {
+    border-radius: 8px;
+    margin: 3px 0;
+    transition: background-color 0.2s ease;
+}
+
+[data-testid="stSidebar"] [data-testid="stPageLink"]:hover {
+    background-color: #294F3B;
+}
+
+[data-testid="stSidebar"] [data-testid="stPageLink"] a {
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
+[data-testid="stSidebar"] hr {
+    border-color: #456653;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.av-sidebar-brand {
+    padding: 8px 4px 14px;
+}
+
+.av-sidebar-logo {
+    font-size: 32px;
+    margin-bottom: 5px;
+}
+
+.av-sidebar-name {
+    font-size: 25px;
+    font-weight: 800;
+    color: #FFFFFF;
+    letter-spacing: -0.7px;
+}
+
+.av-sidebar-tagline {
+    color: #A9C2B1;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+    margin-top: 5px;
+}
+
+.av-sidebar-status {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #C6E8CE;
+    font-size: 12px;
+    padding: 8px 2px;
+}
+
+.av-status-dot {
+    height: 8px;
+    width: 8px;
+    background: #69D391;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+
+/* ==========================================
+   AGROVISION SIDEBAR — WIDTH & TYPOGRAPHY
+========================================== */
+
+/* Increase sidebar width */
+section[data-testid="stSidebar"] {
+    width: 290px !important;
+    min-width: 290px !important;
+}
+
+section[data-testid="stSidebar"] > div {
+    width: 290px !important;
+}
+
+/* Sidebar padding */
+section[data-testid="stSidebar"] [data-testid="stSidebarContent"] {
+    padding: 1.5rem 1rem;
+}
+
+/* Brand name */
+.av-sidebar-name {
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -0.6px;
+}
+
+/* Brand logo */
+.av-sidebar-logo {
+    font-size: 38px;
+}
+
+/* Navigation group headings */
+section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] strong {
+    font-size: 13px;
+    letter-spacing: 0.35px;
+}
+
+/* Navigation links */
+section[data-testid="stSidebar"] [data-testid="stPageLink"] {
+    min-height: 38px;
+    padding: 5px 8px;
+    margin: 4px 0;
+}
+
+/* Navigation link text */
+section[data-testid="stSidebar"] [data-testid="stPageLink"] p {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Platform information */
+.av-sidebar-status {
+    font-size: 12px;
+    padding: 10px 2px;
+}
+
+/* Prevent horizontal overflow */
+section[data-testid="stSidebar"] {
+    overflow-x: hidden;
+}
