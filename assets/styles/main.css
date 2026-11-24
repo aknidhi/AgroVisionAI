@@ -523,3 +523,341 @@ section[data-testid="stSidebar"] [data-testid="stPageLink"] p {
 section[data-testid="stSidebar"] {
     overflow-x: hidden;
 }
+
+
+
+/* =========================================================
+   AGROVISION AI — DISTINCTIVE PAGE HERO HEADERS
+   Replaces the former plain, identical page heading strip.
+   ========================================================= */
+
+.av-page-hero {
+    --hero-a: #173D2B;
+    --hero-b: #2D6848;
+    --hero-accent: #C6E77B;
+    --hero-glow: rgba(198, 231, 123, 0.22);
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(1.5rem, 4vw, 4rem);
+    min-height: 238px;
+    margin: 2px 0 30px;
+    padding: clamp(24px, 3.2vw, 44px) clamp(24px, 3.5vw, 48px);
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.58);
+    border-radius: 24px;
+    /* One shared AgroVision forest-green background across every page. */
+    background:
+        radial-gradient(circle at 78% 18%, rgba(190, 190, 112, 0.28), transparent 29%),
+        linear-gradient(115deg, #173D2B 0%, #356B45 62%, #214B35 100%);
+    box-shadow: 0 14px 34px rgba(23, 61, 43, 0.13);
+}
+
+.av-page-hero::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    opacity: 0.16;
+    background-image:
+        linear-gradient(rgba(255,255,255,.13) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.13) 1px, transparent 1px);
+    background-size: 34px 34px;
+    mask-image: linear-gradient(90deg, black, transparent 82%);
+}
+
+.av-page-hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 390px;
+    height: 390px;
+    right: 11%;
+    top: -245px;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 50%;
+    box-shadow: 0 0 0 35px rgba(255,255,255,.035),
+                0 0 0 70px rgba(255,255,255,.025);
+}
+
+.av-hero-content {
+    position: relative;
+    z-index: 2;
+    flex: 1 1 62%;
+    min-width: 0;
+}
+
+.av-page-hero .av-page-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 18px;
+    padding: 7px 12px 7px 8px;
+    color: rgba(255,255,255,.91);
+    background: rgba(255,255,255,.10);
+    border: 1px solid rgba(255,255,255,.17);
+    border-radius: 999px;
+    font-size: .70rem;
+    letter-spacing: 1.45px;
+    font-weight: 800;
+}
+
+.av-eyebrow-icon {
+    display: inline-grid;
+    place-items: center;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.15);
+    font-size: 15px;
+}
+
+.av-hero-kicker {
+    margin-bottom: 8px;
+    color: var(--hero-accent);
+    font-size: .76rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.av-page-hero .av-page-title {
+    max-width: 850px;
+    margin: 0 0 10px;
+    color: #FFFFFF !important;
+    font-size: clamp(2rem, 4.1vw, 3.35rem);
+    line-height: 1.06;
+    letter-spacing: -1.7px;
+    font-weight: 820;
+    text-wrap: balance;
+}
+
+.av-page-hero .av-page-subtitle {
+    max-width: 730px;
+    margin: 0;
+    color: rgba(245,250,245,.82) !important;
+    font-size: clamp(.94rem, 1.35vw, 1.08rem);
+    line-height: 1.65;
+}
+
+.av-hero-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+}
+
+.av-hero-chip {
+    display: inline-flex;
+    align-items: center;
+    min-height: 27px;
+    padding: 5px 10px;
+    border: 1px solid rgba(255,255,255,.22);
+    border-radius: 999px;
+    color: rgba(255,255,255,.9);
+    background: rgba(255,255,255,.075);
+    font-size: .65rem;
+    font-weight: 750;
+    letter-spacing: .8px;
+}
+
+.av-hero-visual {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    flex: 0 0 clamp(155px, 22vw, 265px);
+    width: clamp(155px, 22vw, 265px);
+    height: clamp(155px, 22vw, 205px);
+}
+
+.av-visual-ring {
+    position: absolute;
+    width: 174px;
+    height: 174px;
+    border: 1px solid rgba(255,255,255,.24);
+    border-radius: 50%;
+}
+.av-visual-ring-one {
+    width: 145px;
+    height: 145px;
+    border-style: dashed;
+    animation: av-hero-rotate 34s linear infinite;
+}
+.av-visual-ring-two {
+    width: 190px;
+    height: 190px;
+    border-color: rgba(255,255,255,.12);
+}
+.av-visual-icon {
+    display: grid;
+    place-items: center;
+    width: 104px;
+    height: 104px;
+    border: 1px solid rgba(255,255,255,.32);
+    border-radius: 30px;
+    background: linear-gradient(145deg, rgba(255,255,255,.22), rgba(255,255,255,.07));
+    box-shadow: 0 15px 36px rgba(0,0,0,.18), inset 0 1px rgba(255,255,255,.2);
+    font-size: 3.4rem;
+    backdrop-filter: blur(8px);
+}
+.av-visual-caption {
+    position: absolute;
+    right: -4px;
+    bottom: -1px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: min(225px, 100%);
+    padding: 11px 14px;
+    border: 1px solid rgba(255,255,255,.2);
+    border-radius: 13px;
+    color: #fff;
+    background: rgba(12, 39, 26, .72);
+    box-shadow: 0 8px 22px rgba(0,0,0,.15);
+    backdrop-filter: blur(10px);
+}
+.av-visual-status-dot {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #A9E66D;
+    box-shadow: 0 0 10px #A9E66D;
+}
+.av-visual-caption-label {
+    color: #FFFFFF;
+    font-size: .78rem;
+    font-weight: 800;
+}
+.av-visual-caption-text {
+    color: rgba(255,255,255,.72);
+    font-size: .67rem;
+    line-height: 1.4;
+}
+.av-visual-spark {
+    position: absolute;
+    color: var(--hero-accent);
+    font-size: 1.35rem;
+}
+.av-spark-one { top: 4px; right: 18%; }
+.av-spark-two { bottom: 35px; left: 3%; }
+
+.av-hero-bottom-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--hero-accent), rgba(255,255,255,.18), transparent 90%);
+}
+
+@keyframes av-hero-rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Individual module colour identities, all within AgroVision's palette. */
+.av-theme-home {
+    --hero-a: #123B2B; --hero-b: #286647;
+    --hero-accent: #D4EF91; --hero-glow: rgba(212,239,145,.25);
+}
+.av-theme-dashboard {
+    --hero-a: #102F2C; --hero-b: #28665A;
+    --hero-accent: #8CE0C0; --hero-glow: rgba(140,224,192,.24);
+}
+.av-theme-crop {
+    --hero-a: #17442D; --hero-b: #4C8050;
+    --hero-accent: #D2ED83; --hero-glow: rgba(210,237,131,.25);
+}
+.av-theme-health {
+    --hero-a: #123D37; --hero-b: #26766A;
+    --hero-accent: #9CE8CF; --hero-glow: rgba(156,232,207,.23);
+}
+.av-theme-farm {
+    --hero-a: #3A3920; --hero-b: #68713A;
+    --hero-accent: #F0D27A; --hero-glow: rgba(240,210,122,.24);
+}
+.av-theme-weather {
+    --hero-a: #173D49; --hero-b: #367A83;
+    --hero-accent: #B6E8E8; --hero-glow: rgba(182,232,232,.24);
+}
+.av-theme-market {
+    --hero-a: #173A2E; --hero-b: #426B43;
+    --hero-accent: #F0C66B; --hero-glow: rgba(240,198,107,.25);
+}
+.av-theme-research {
+    --hero-a: #24354A; --hero-b: #426579;
+    --hero-accent: #B7D9E9; --hero-glow: rgba(183,217,233,.24);
+}
+.av-theme-reports {
+    --hero-a: #3D3324; --hero-b: #79603A;
+    --hero-accent: #F2D28A; --hero-glow: rgba(242,210,138,.25);
+}
+.av-theme-sources {
+    --hero-a: #173D3B; --hero-b: #34756A;
+    --hero-accent: #A9E2D4; --hero-glow: rgba(169,226,212,.24);
+}
+.av-theme-default {
+    --hero-a: #173D2B; --hero-b: #356B45;
+    --hero-accent: #C6E77B;
+}
+
+/* Mobile: retain a strong title and simplify the decorative visual. */
+@media (max-width: 760px) {
+    .av-page-hero {
+        min-height: 0;
+        gap: 12px;
+        padding: 23px 20px 25px;
+        border-radius: 18px;
+    }
+    .av-hero-content { flex-basis: 100%; }
+    .av-page-hero .av-page-eyebrow {
+        margin-bottom: 14px;
+        font-size: .61rem;
+        letter-spacing: 1px;
+    }
+    .av-page-hero .av-page-title {
+        font-size: clamp(1.8rem, 7vw, 2.45rem);
+        letter-spacing: -1px;
+    }
+    .av-page-hero .av-page-subtitle { font-size: .9rem; }
+    .av-hero-chips { margin-top: 16px; gap: 6px; }
+    .av-hero-chip { font-size: .57rem; padding: 5px 8px; }
+    .av-hero-visual {
+        flex: 0 0 90px;
+        width: 90px;
+        height: 120px;
+        align-self: center;
+    }
+    .av-visual-ring-one { width: 82px; height: 82px; }
+    .av-visual-ring-two { width: 100px; height: 100px; }
+    .av-visual-icon {
+        width: 62px;
+        height: 62px;
+        border-radius: 19px;
+        font-size: 2rem;
+    }
+    .av-visual-caption, .av-visual-spark { display: none; }
+}
+@media (max-width: 520px) {
+    .av-page-hero { display: block; }
+    .av-hero-visual {
+        position: absolute;
+        right: 8px;
+        top: 10px;
+        opacity: .22;
+        pointer-events: none;
+    }
+    .av-page-hero .av-page-title,
+    .av-page-hero .av-page-subtitle,
+    .av-page-hero .av-page-eyebrow,
+    .av-hero-chips { position: relative; z-index: 2; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .av-visual-ring-one { animation: none; }
+}
